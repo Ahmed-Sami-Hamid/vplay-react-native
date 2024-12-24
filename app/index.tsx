@@ -9,11 +9,11 @@ import { Link } from "expo-router";
 
 const Index = () => {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
+    <View className="flex-1 items-center justify-center bg-phoneBg">
       <Text>Index</Text>
       <StatusBar style="auto" />
       <Link href="/profile" style={{ color: "blue" }}>
-        Go to About
+        Go to Profile
       </Link>
     </View>
   );
