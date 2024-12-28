@@ -1,6 +1,6 @@
 # VPlay
 
-- Its a React Native Project with Expo
+- Its an Expo React Native Project
 
 ## Overview
 

@@ -7,19 +7,19 @@ module.exports = {
     extend: {
       colors: {
         primary: "#40FDAB",
-        secondary:{
+        secondary: {
           DEFAULT: "#1F9A5E",
           100: "#29DC87",
           200: "#28BC74",
         },
         white: "#FFFFFF",
-        phoneBg:"#17221C",
-        darkBg:"#04150D",
-        danger:"#FF5B5B",
+        phoneBg: "#17221C",
+        darkBg: "#04150D",
+        danger: "#FF5B5B",
         black: {
           DEFAULT: "#000",
-          100: "#1E1E2D",
-          200: "#232533",
+          100: "#04150D",
+          200: "#0F472B",
         },
         gray: {
           100: "#CDCDE0",
@@ -36,7 +36,6 @@ module.exports = {
         pextrabold: ["Poppins-ExtraBold", "sans-serif"],
         pblack: ["Poppins-Black", "sans-serif"],
       },
-      
     },
   },
   plugins: [],
