@@ -3,10 +3,11 @@ import {
   TextInputProps,
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   Image,
 } from "react-native";
+
+import { TextInput } from "react-native-paper";
 
 import { icons } from "../constants";
 
@@ -29,26 +30,28 @@ export const FormField: React.FC<FormFieldProps> = ({
   ...props
 }) => {
   const [showPassword, setShowPassword] = React.useState(false);
+  const [text, setText] = React.useState("");
 
   return (
     <View className={`space-y-2 ${otherStyles}`}>
       <Text className="text-base text-gray-100 font-pmedium mb-5">{title}</Text>
 
-      <View
-        className={`${addStyle} w-full h-16 px-4 bg-black-100 rounded-2xl border-2 border-black-200 focus:border-secondary flex flex-row items-center`}
-      >
+      <View className={`${addStyle}`}>
         <TextInput
-          className="flex-1 text-white font-psemibold text-base"
+          className=" w-full h-16 px-4 bg-black-100 border-2 border-black-200 focus:border-secondary flex flex-row items-center"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7B7B8B"
           onChangeText={handleChangeText}
           secureTextEntry={title === "Password" && !showPassword}
-          {...props}
+          textColor="#ffffff"
         />
 
         {title === "Password" && (
-          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+          <TouchableOpacity
+            onPress={() => setShowPassword(!showPassword)}
+            className="flex justify-end items-end"
+          >
             <Image
               source={!showPassword ? icons.eye : icons.eyeHide}
               className="w-6 h-6"

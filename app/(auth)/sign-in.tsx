@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 
 // React Native
-import { View, Text, SafeAreaView, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  Vibration,
+  Button,
+} from "react-native";
 
 // Images
 import { images } from "../../constants";
@@ -15,6 +23,16 @@ const SignIn = () => {
     email: "",
     password: "",
   });
+
+  const ONE_SECOND_IN_MS = 1000;
+
+  const PATTERN = [
+    1 * ONE_SECOND_IN_MS,
+    1 * ONE_SECOND_IN_MS,
+    1 * ONE_SECOND_IN_MS,
+    1 * ONE_SECOND_IN_MS,
+    1 * ONE_SECOND_IN_MS,
+  ];
   return (
     <SafeAreaView className="h-full bg-phoneBg">
       <ScrollView>
@@ -34,7 +52,6 @@ const SignIn = () => {
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles="mt-7"
             keyboardType="email-address"
-            addStyle="mt-4 w-full h-16 px-4 bg-black-100 rounded-2xl border-2 border-black-200 focus:border-secondary flex flex-row items-center"
           />
 
           <FormField
@@ -42,7 +59,6 @@ const SignIn = () => {
             value={form.password}
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
-            addStyle="mt-4 w-full h-16 px-4 bg-black-100 rounded-2xl border-2 border-black-200 focus:border-secondary flex flex-row items-center"
           />
 
           <CustomButton
@@ -50,6 +66,11 @@ const SignIn = () => {
             containerStyles="mt-10"
             textStyles="font-semibold"
             handlePress={() => {}}
+          />
+
+          <Button
+            title="Vibrate once"
+            onPress={() => Vibration.vibrate(PATTERN)}
           />
         </View>
       </ScrollView>
